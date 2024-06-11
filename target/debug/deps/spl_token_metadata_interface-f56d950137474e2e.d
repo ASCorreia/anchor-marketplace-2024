@@ -1,0 +1,8 @@
+/Users/andrecorreia/Documents/GitHub/anchor-marketplace-2024/target/debug/deps/libspl_token_metadata_interface-f56d950137474e2e.rmeta: /Users/andrecorreia/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spl-token-metadata-interface-0.3.3/src/lib.rs /Users/andrecorreia/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spl-token-metadata-interface-0.3.3/src/error.rs /Users/andrecorreia/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spl-token-metadata-interface-0.3.3/src/instruction.rs /Users/andrecorreia/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spl-token-metadata-interface-0.3.3/src/state.rs
+
+/Users/andrecorreia/Documents/GitHub/anchor-marketplace-2024/target/debug/deps/spl_token_metadata_interface-f56d950137474e2e.d: /Users/andrecorreia/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spl-token-metadata-interface-0.3.3/src/lib.rs /Users/andrecorreia/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spl-token-metadata-interface-0.3.3/src/error.rs /Users/andrecorreia/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spl-token-metadata-interface-0.3.3/src/instruction.rs /Users/andrecorreia/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spl-token-metadata-interface-0.3.3/src/state.rs
+
+/Users/andrecorreia/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spl-token-metadata-interface-0.3.3/src/lib.rs:
+/Users/andrecorreia/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spl-token-metadata-interface-0.3.3/src/error.rs:
+/Users/andrecorreia/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spl-token-metadata-interface-0.3.3/src/instruction.rs:
+/Users/andrecorreia/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spl-token-metadata-interface-0.3.3/src/state.rs:
