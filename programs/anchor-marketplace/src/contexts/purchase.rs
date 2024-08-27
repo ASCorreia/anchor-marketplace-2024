@@ -65,8 +65,7 @@ impl<'info> Purchase<'info> {
         let cpi_ctx = CpiContext::new(cpi_program, cpi_accounts);
 
         let amount = self.listing.price
-            .checked_mul(self.marketplace.fee as u64).unwrap()
-            .checked_div(10000).unwrap();
+            .checked_sub(self.marketplace.fee as u64).unwrap();
 
         transfer(cpi_ctx, self.listing.price - amount)?;
 
