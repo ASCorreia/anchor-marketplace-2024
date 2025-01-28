@@ -9,6 +9,7 @@ crate-type = ["cdylib", "lib"]
 name = "anchor_marketplace"
 
 [features]
+anchor-debug = []
 default = []
 cpi = ["no-entrypoint"]
 no-entrypoint = []
