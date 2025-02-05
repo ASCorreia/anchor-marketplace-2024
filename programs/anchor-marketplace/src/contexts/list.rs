@@ -11,21 +11,21 @@ pub struct List<'info> {
         seeds = [b"marketplace", marketplace.name.as_str().as_bytes()],
         bump = marketplace.bump,
     )]
-    pub marketplace: Account<'info, Marketplace>,
-    pub maker_mint: InterfaceAccount<'info, Mint>,
+    pub marketplace: Box<Account<'info, Marketplace>>,
+    pub maker_mint: Box<InterfaceAccount<'info, Mint>>,
     #[account(
         mut,
         associated_token::mint = maker_mint,
         associated_token::authority = maker,
     )]
-    pub maker_ata: InterfaceAccount<'info, TokenAccount>,
+    pub maker_ata: Box<InterfaceAccount<'info, TokenAccount>>,
     #[account(
         init,
         payer = maker,
         associated_token::mint = maker_mint,
         associated_token::authority = listing,
     )]
-    pub vault: InterfaceAccount<'info, TokenAccount>,
+    pub vault: Box<InterfaceAccount<'info, TokenAccount>>,
     #[account(
         init,
         payer = maker,
@@ -33,8 +33,8 @@ pub struct List<'info> {
         bump,
         space = Listing::INIT_SPACE,
     )]
-    pub listing: Account<'info, Listing>,
-    pub collection_mint: InterfaceAccount<'info, Mint>,
+    pub listing: Box<Account<'info, Listing>>,
+    pub collection_mint: Box<InterfaceAccount<'info, Mint>>,
     #[account(
         seeds = [
             b"metadata", 
@@ -46,7 +46,7 @@ pub struct List<'info> {
         constraint = metadata.collection.as_ref().unwrap().key.as_ref() == collection_mint.key().as_ref(),
         constraint = metadata.collection.as_ref().unwrap().verified == true,
     )]
-    pub metadata: Account<'info, MetadataAccount>,
+    pub metadata: Box<Account<'info, MetadataAccount>>,
     #[account(
         seeds = [
             b"metadata", 
@@ -57,7 +57,7 @@ pub struct List<'info> {
         seeds::program = metadata_program.key(),
         bump,
     )]
-    pub master_edition: Account<'info, MasterEditionAccount>,
+    pub master_edition: Box<Account<'info, MasterEditionAccount>>,
     pub metadata_program: Program<'info, Metadata>,
     pub associated_token_program: Program<'info, AssociatedToken>,
     pub system_program: Program<'info, System>,

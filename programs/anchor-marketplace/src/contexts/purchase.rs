@@ -9,32 +9,32 @@ pub struct Purchase<'info> {
     pub taker: Signer<'info>,
     #[account(mut)]
     pub maker: SystemAccount<'info>,
-    pub maker_mint: InterfaceAccount<'info, Mint>,
+    pub maker_mint: Box<InterfaceAccount<'info, Mint>>,
     #[account(
         seeds = [b"marketplace", marketplace.name.as_str().as_bytes()],
         bump = marketplace.bump,
     )]
-    pub marketplace: Account<'info, Marketplace>,
+    pub marketplace: Box<Account<'info, Marketplace>>,
     #[account(
         init_if_needed,
         payer = taker,
         associated_token::mint = maker_mint,
         associated_token::authority = taker,
     )]
-    pub taker_ata: InterfaceAccount<'info, TokenAccount>,
+    pub taker_ata: Box<InterfaceAccount<'info, TokenAccount>>,
     #[account(
         mut,
         associated_token::mint = maker_mint,
         associated_token::authority = listing,
     )]
-    pub vault: InterfaceAccount<'info, TokenAccount>,
+    pub vault: Box<InterfaceAccount<'info, TokenAccount>>,
     #[account(
         mut,
         seeds = [marketplace.key().as_ref(), maker_mint.key().as_ref()],
         bump = listing.bump,
         close = maker,
     )]
-    pub listing: Account<'info, Listing>,
+    pub listing: Box<Account<'info, Listing>>,
     #[account(
         seeds = [b"treasury", marketplace.key().as_ref()],
         bump,
@@ -47,7 +47,7 @@ pub struct Purchase<'info> {
         mint::decimals = 6,
         mint::authority = marketplace,
     )]
-    pub rewards_mint: InterfaceAccount<'info, Mint>,
+    pub rewards_mint: Box<InterfaceAccount<'info, Mint>>,
     pub associated_token_program: Program<'info, AssociatedToken>,
     pub token_program: Interface<'info, TokenInterface>,
     pub system_program: Program<'info, System>,
